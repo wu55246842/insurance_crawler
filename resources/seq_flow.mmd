@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant M as Main
+    participant C as Crawler
+    participant P as Parser
+    participant D as DataHandler
+    M->>C: start_crawling()
+    C->>M: return html
+    M->>P: parse(html)
+    P->>M: return data
+    M->>D: save_data(data)
+    D->>M: return success

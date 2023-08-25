@@ -1,0 +1,25 @@
+classDiagram
+    class Main{
+        +str url
+        +Crawler crawler
+        +Parser parser
+        +DataHandler data_handler
+        +start_crawling()
+    }
+    class Crawler{
+        +str url
+        +dict settings
+        +crawl()
+    }
+    class Parser{
+        +str html
+        +parse()
+    }
+    class DataHandler{
+        +DataFrame data
+        +str output_format
+        +save_data()
+    }
+    Main "1" -- "1" Crawler: uses
+    Main "1" -- "1" Parser: uses
+    Main "1" -- "1" DataHandler: uses
